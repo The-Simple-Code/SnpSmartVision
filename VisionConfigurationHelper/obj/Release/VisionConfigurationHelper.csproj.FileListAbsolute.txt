@@ -1,0 +1,9 @@
+D:\C#_PROJECT\SnpSmartVision\VisionConfigurationHelper\bin\Release\VisionConfigurationHelper.dll
+D:\C#_PROJECT\SnpSmartVision\VisionConfigurationHelper\bin\Release\VisionConfigurationHelper.pdb
+D:\C#_PROJECT\SnpSmartVision\VisionConfigurationHelper\bin\Release\NationalInstruments.Vision.Common.dll
+D:\C#_PROJECT\SnpSmartVision\VisionConfigurationHelper\bin\Release\NationalInstruments.Vision.dll
+D:\C#_PROJECT\SnpSmartVision\VisionConfigurationHelper\bin\Release\NationalInstruments.Vision.xml
+D:\C#_PROJECT\SnpSmartVision\VisionConfigurationHelper\bin\Release\NationalInstruments.Vision.Common.xml
+D:\C#_PROJECT\SnpSmartVision\VisionConfigurationHelper\obj\Release\VisionConfigurationHelper.dll
+D:\C#_PROJECT\SnpSmartVision\VisionConfigurationHelper\obj\Release\VisionConfigurationHelper.pdb
+D:\C#_PROJECT\SnpSmartVision\VisionConfigurationHelper\obj\Release\VisionConfigurationHelper.csprojResolveAssemblyReference.cache

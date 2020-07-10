@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{243360AE-AE8C-4ED8-83C4-3A8704B7FFA8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SnpSmartVision</RootNamespace>
+    <AssemblyName>SnpSmartVision</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Program Files\S&amp;P SYSTEM\SEH VISION\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>SNP SMART VISION</ProductName>
+    <PublisherName>이병관</PublisherName>
+    <SuiteName>SEH GRADE MASTER</SuiteName>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>rainbow_47311.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>4D02FEDD7CEEF78B3F92F8DCE85413AFC185C0CD</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SnpSmartVision_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Acquisition, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Acquisition.dll</HintPath>
+    </Reference>
+    <Reference Include="CamAttrTreeView, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\..\..\SnpSystem\Vision\Viewer\CamAttrTreeView\bin\Release\CamAttrTreeView.exe</HintPath>
+    </Reference>
+    <Reference Include="CameraAttributeSetting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\CameraAttributeSetting.dll</HintPath>
+    </Reference>
+    <Reference Include="CameraTrigger">
+      <HintPath>bin\Release\CameraTrigger.dll</HintPath>
+    </Reference>
+    <Reference Include="ColorRangeForm, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>..\..\..\SnpSystem\Vision\Viewer\ColorRangeForm\bin\x86\Release\ColorRangeForm.exe</HintPath>
+    </Reference>
+    <Reference Include="CriteriaForm, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <ExecutableExtension>.exe</ExecutableExtension>
+      <HintPath>bin\Release\CriteriaForm.exe</HintPath>
+    </Reference>
+    <Reference Include="FlagDeligation">
+      <HintPath>..\..\..\SnpSystem\Vision\Etc\FlagDeligation\bin\Release\FlagDeligation.dll</HintPath>
+    </Reference>
+    <Reference Include="IntTextBox">
+      <HintPath>..\..\..\IntTextBox\IntTextBox\bin\Release\IntTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="MainThread, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SnpSystem\Vision\Etc\MainThread\bin\x86\Release\MainThread.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.Common, Version=13.0.35.190, Culture=neutral, PublicKeyToken=18cbae0f9955702a, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.UI, Version=13.0.40.242, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.UI.Styles3D, Version=13.0.40.242, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=x86" />
+    <Reference Include="NationalInstruments.UI.WindowsForms, Version=13.0.40.242, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.Vision, Version=13.1.35.100, Culture=neutral, PublicKeyToken=18cbae0f9955702a, processorArchitecture=x86" />
+    <Reference Include="NationalInstruments.Vision.Acquisition.Imaqdx, Version=3.40.35.49153, Culture=neutral, PublicKeyToken=18cbae0f9955702a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\National Instruments\MeasurementStudioVS2008\DotNET\Assemblies\Current\NationalInstruments.Vision.Acquisition.Imaqdx.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.Vision.Common, Version=13.1.35.100, Culture=neutral, PublicKeyToken=18cbae0f9955702a, processorArchitecture=x86" />
+    <Reference Include="NationalInstruments.Vision.MeasurementStudioDemo.2008">
+      <HintPath>bin\Release\NationalInstruments.Vision.MeasurementStudioDemo.2008.dll</HintPath>
+    </Reference>
+    <Reference Include="Parameters, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Parameters.dll</HintPath>
+    </Reference>
+    <Reference Include="Roi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\SnpSystem\Vision\Acquisition\Roi\bin\x86\Release\Roi.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>..\..\..\DockPanel_2.4_Bin\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AlgorithmStopWatch.cs" />
+    <Compile Include="CalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalForm.Designer.cs">
+      <DependentUpon>CalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Camera.cs" />
+    <Compile Include="CamForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CamForm.Designer.cs">
+      <DependentUpon>CamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CamAttrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CamAttrForm.Designer.cs">
+      <DependentUpon>CamAttrForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Debugger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Debugger.Designer.cs">
+      <DependentUpon>Debugger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayResultForm.Designer.cs">
+      <DependentUpon>DisplayResultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageSelectionForm.Designer.cs">
+      <DependentUpon>ImageSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntervalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IntervalForm.Designer.cs">
+      <DependentUpon>IntervalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MakingTreeList.cs" />
+    <Compile Include="ProcessAlgorithm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessingResult.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RoiListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoiListView.Designer.cs">
+      <DependentUpon>RoiListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoiOffsetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoiOffsetForm.Designer.cs">
+      <DependentUpon>RoiOffsetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoiSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoiSet.Designer.cs">
+      <DependentUpon>RoiSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphForm.Designer.cs">
+      <DependentUpon>GraphForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MdiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MdiForm.Designer.cs">
+      <DependentUpon>MdiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchingForm.Designer.cs">
+      <DependentUpon>SearchingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SerialOut.cs" />
+    <Compile Include="TimeTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeTable.Designer.cs">
+      <DependentUpon>TimeTable.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CalForm.resx">
+      <DependentUpon>CalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CamAttrForm.resx">
+      <DependentUpon>CamAttrForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CamForm.resx">
+      <DependentUpon>CamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Debugger.resx">
+      <DependentUpon>Debugger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayResultForm.resx">
+      <DependentUpon>DisplayResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageSelectionForm.resx">
+      <DependentUpon>ImageSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IntervalForm.resx">
+      <DependentUpon>IntervalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoiListView.resx">
+      <DependentUpon>RoiListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoiOffsetForm.resx">
+      <DependentUpon>RoiOffsetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoiSet.resx">
+      <DependentUpon>RoiSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphForm.resx">
+      <DependentUpon>GraphForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MdiForm.resx">
+      <DependentUpon>MdiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchingForm.resx">
+      <DependentUpon>SearchingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeTable.resx">
+      <DependentUpon>TimeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="camera1.ico" />
+    <Content Include="rainbow_47311.ico" />
+    <Content Include="version.txt" />
+    <None Include="Resources\ViewThumbnailsHS.png" />
+    <None Include="Resources\Warning.bmp" />
+    <None Include="Resources\video.ico" />
+    <None Include="Resources\1376373841_color-line.png" />
+    <None Include="Resources\1376386304_layout.png" />
+    <None Include="Resources\1376904515_floppy_disk_save.png" />
+    <None Include="Resources\1376660910_stop.png" />
+    <None Include="Resources\1377536911_Play1Hot.png" />
+    <None Include="Resources\1376386600_start.png" />
+    <None Include="Resources\1376405165_stock_lock-ok.png" />
+    <None Include="Resources\1376369710_film_camera_16mm.png" />
+    <None Include="Resources\1376369775_film_camera_16mm.png" />
+    <None Include="Resources\1376372066_configuration_edit.png" />
+    <None Include="Resources\1376386852_gtk-stop.png" />
+    <None Include="Resources\1376460482_25.png" />
+    <None Include="Resources\AlignToGridHS.png" />
+    <None Include="Resources\camera.bmp" />
+    <None Include="Resources\BringForwardHS.png" />
+    <None Include="Resources\camera.png" />
+    <None Include="Resources\Calibration.png" />
+    <None Include="Resources\apple1.png" />
+    <None Include="Resources\apple2.png" />
+    <None Include="Resources\apple3.png" />
+    <None Include="Resources\1376386382_tests.png" />
+    <None Include="Resources\1376386403_tests.png" />
+    <None Include="Resources\adj.bmp" />
+    <None Include="Resources\1377166238_gtk-refresh.png" />
+    <None Include="Resources\1376398280_system-software-update.png" />
+    <None Include="Resources\1376369775_film_camera_16mm1.png" />
+    <Content Include="Resources\1376369710_film_camera_16mm1.png" />
+    <None Include="Resources\bigCam.png" />
+    <Content Include="Resources\camera1.ico" />
+    <None Include="Resources\white.bmp" />
+    <None Include="Resources\meter.bmp" />
+    <None Include="Resources\flag.bmp" />
+    <None Include="Resources\seperator.bmp" />
+    <None Include="Resources\ledGreen.bmp" />
+    <None Include="Resources\ledDarkGreen.bmp" />
+    <None Include="Resources\file_add.png" />
+    <None Include="Resources\diskette.png" />
+    <None Include="Resources\player_play.png" />
+    <None Include="Resources\player_stop.png" />
+    <None Include="Resources\rainbow_47311.ico" />
+    <None Include="Resources\lock.ico" />
+    <None Include="Resources\lock.png" />
+    <None Include="Resources\SaveFormDesignHS.png" />
+    <None Include="Resources\saveHS.png" />
+    <None Include="Resources\openHS.png" />
+    <None Include="Resources\DocumentHS.png" />
+    <None Include="Resources\SaveAsWebPageHS.png" />
+    <None Include="Resources\NewDocumentHS.png" />
+    <None Include="Resources\DeleteHS.png" />
+    <None Include="Resources\graphhs.png" />
+    <None Include="Resources\HTMLPasswordHS.png" />
+    <None Include="Resources\PieChartHS.png" />
+    <None Include="Resources\PropertiesHS.png" />
+    <None Include="Resources\RulerHS.png" />
+    <None Include="Resources\CameraSetting.png" />
+    <None Include="Resources\DynamicrRoi.png" />
+    <None Include="Resources\UserRoi.png" />
+    <None Include="Resources\FormulaEvaluatorHS.png" />
+    <None Include="Resources\Flag_blueHS.png" />
+    <None Include="Resources\PlayHS.png" />
+    <None Include="Resources\PauseHS.png" />
+    <None Include="Resources\ThumbnailView.png" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\CameraList.png" />
+    <None Include="Resources\CameraInfo.png" />
+    <None Include="Resources\Camerax.bmp" />
+    <None Include="Resources\options_2.png" />
+    <None Include="Resources\list_settings.gif" />
+    <None Include="Resources\Measure.png" />
+    <None Include="Resources\clock.bmp" />
+    <None Include="Resources\clock2.bmp" />
+    <None Include="Resources\HTMLSubmitHS.png" />
+    <None Include="Resources\IntTrigger.png" />
+    <None Include="Resources\FindHS.png" />
+    <None Include="Resources\unlock.ico" />
+    <None Include="Resources\unlock.png" />
+    <None Include="Resources\exclamation.png" />
+    <None Include="Resources\TileWindowsHorizontallyHS.png" />
+    <None Include="Resources\user_silhouette.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\connect.png" />
+    <None Include="Resources\disconnect.png" />
+    <Content Include="Resources\Video.bmp" />
+    <None Include="Resources\Color.bmp" />
+    <None Include="Resources\Color1.bmp" />
+    <Content Include="Resources\icon.ico" />
+    <None Include="Resources\Run.bmp" />
+    <None Include="Resources\Pause.bmp" />
+    <None Include="Resources\Save.bmp" />
+    <None Include="Resources\speedometer.png" />
+    <None Include="Resources\none.bmp" />
+    <None Include="Resources\ZoomOut.bmp" />
+    <None Include="Resources\ZoomIn.bmp" />
+    <None Include="Resources\Zoom.bmp" />
+    <None Include="Resources\rotate_rect.bmp" />
+    <None Include="Resources\rect.bmp" />
+    <None Include="Resources\Pointer1.bmp" />
+    <None Include="Resources\point1.bmp" />
+    <None Include="Resources\open_poly.bmp" />
+    <None Include="Resources\open_free.bmp" />
+    <None Include="Resources\Normal.bmp" />
+    <None Include="Resources\line.bmp" />
+    <None Include="Resources\fit.bmp" />
+    <None Include="Resources\donut.bmp" />
+    <None Include="Resources\closed_poly.bmp" />
+    <None Include="Resources\closed_free.bmp" />
+    <None Include="Resources\circle.bmp" />
+    <None Include="Resources\Breakpoint.bmp" />
+    <None Include="Resources\point.bmp" />
+    <None Include="Resources\Pointer.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Visual.C++.10.0.x86">
+      <Visible>False</Visible>
+      <ProductName>Visual C++ 2010 런타임 라이브러리%28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime%28x86 및 x64%29 언어 팩 - 한국어</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\VisionConfigurationHelper\VisionConfigurationHelper.csproj">
+      <Project>{EE1D06FF-40EE-41F5-AC54-66B0682701DA}</Project>
+      <Name>VisionConfigurationHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

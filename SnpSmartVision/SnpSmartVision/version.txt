@@ -1,0 +1,223 @@
+/*
+                                 ******************************************************
+								 *	 S&P SYSTEM SMART VISION VERSION RENEWAL HISTORY  *
+                                 ******************************************************
+ 
+ 
+ 0. Version정보 입력은 MdiForm.cs에 있음
+
+ 1. Ver. 1.0.1 -> The first issued (2015)	:청송에 설치
+ 2. Ver. 1.0.2 -> The second issued			:보유
+ 3. Ver. 1.0.3 -> The third issued			:변산설치(Source는 없음)
+ 4. Ver. 1.0.3.2
+     -2017.7.17 둔내 설치중 Bug를 찾아 수정함
+	 -ROI작성시 대화창에서 SEQ0만 선택됨. 선택시 SEQ가 seq로 바뀜=>대문자로 변환하여 처리 
+	 -착색률 처리 프로세스 추가:LastAverage=>sizeTotal,colorTotal추가(모든 size,color를 더하여 착색률 계산)
+ 5. Ver.1.0.4.a
+     -2017.7.19
+	 -과일외형을 감지할때 ROI영역 모든 파티클을 합산
+ 6. Ver.1.0.4.b
+    -합산시 영역계산 오류 수정
+ 7. Ver.1.0.4.c
+	-Extra Image Type Update문제 해결
+ 8. Ver.1.0.5.a
+	-Color Range 조정Form에 수치입력창 추가
+	-Color Range Form캡션에 선택한 이미지 표기.
+	-Color Histogram 실행시 image선택 가능토록 수정
+	-Version정보를 MdiForm에 추가	
+9. Ver.1.1.0.a
+    -Outline 처리옵션 추가
+
+	[Outline Method]
+	-One->전체화면에서 각 ROI별 가장큰 파티클을 대상으로 Outline을 추출
+	-All->전체화면에서 모든 파티클을 대상으로 파티클이 속한 ROI에 크기릏 합산,좌표합성
+	-MaxBySeperated-> ROI별로 화면을 분할하고, 각 분할된 화면별로 최대 파티클을 Outline으로 간주
+	-AllBySeperated-> ROI별로 화면을 분할하고, 각 분할된 화면별로 모든 파티클을 합산하여 Outline으로 간주
+
+10.Ver.1.1.1.a
+	-알람발생용 시리얼포트 추가
+	-선별중일때는 녹색,정지중일때는 적색 타워램프를 점등토록함
+	-Protocol:"@0155AAFE;"
+	-Buadrate:38400
+	-N,8,1
+	-프로토콜에 맞도록 전용보드 개발필요;
+11.Ver.1.1.2.a(2017.7.21)
+    -ROI Drawing이 표시 않되는 현상 해결
+
+12.Ver.1.2.0.a(2017.7.24)
+	-색상처리시 Partcle Remove,Partcle Filter의 사용여부를 선택하도록 함
+	-색상처리시 사용하지 않음을 권장함
+
+13.Ver.1.2.0.b(2017.7.25)
+	-Outline처리시 Partcle Remover 선택기능 추가(기존은 무조건 사용하였으나 선택할 수 있게함)
+
+14.Ver.2.0.1.a(2017.7.25)
+	-채색영역처리시 앞서 처리된 outline영역 안의 채색 영역만 처리함
+	-이를위해 outline의 최종 roi영역을 extraction하고,파티클리포트를 만들고,
+	남은파티클의 영역을 합산함
+
+15.Ver.2.1.0.a(2017.7.25)
+    -Outline추출옵션 All을 선택하였을때 하나의 이미지만 출추되는 버그 수정
+
+16.Ver.2.1.0.b(2017.7.26)
+    -Outline추출옵션 MaxBySeperated을 선택하였을때 Aspect Ratio가 0으로 표시되는 버그 수정
+	-Result[i].peekAspectRatio의 arg중 하나의 변수 j를 i를 오기하여 발생한 문제
+
+17.Ver.2.1.0.c(2017.7.29)
+    -Image Enhancement=>GrayMorphology기능추가. 3개이미지에 대해 사용여부를 선택할 수 있음
+	-Extra Image처리부에 Lowpass Filter,GrayMorphology,Remove Particle 추가.
+
+18.Ver.2.1.0.d(2017.7.29)
+	-Lane Balance Color Factor추가
+
+19.Ver.2.1.1.a(2017.7.30)
+    -Multi Config기능추가
+	-과종,선별조건에 따라 다른 설정값을 불러와서 사용할 수 있도록 기능추가
+	-설정파일 변경시에는 프로그램을 강제로 재 시작해야함
+
+20.Ver.2.1.1.b(2017.7.31)
+	-Config File을 읽어온후 프로그램을 자동으로 restart하도록 Application.Restart()추가
+
+21.Ver.2.1.1.c(2017.8.4)
+	-Extra Threshold : 64->128로변경
+	-Image합성시 Add->Or로 수정
+
+
+
+
+
+
+
+
+
+
+
+*****************************************************************************************
+
+<BUG REPORT>
+2017.7.26 Ver.2.1.0.a
+-MaxBySeperated Mode에서 Aspect Ratio가 0으로 나옴
+-다른모드에서도 같은지 확인필요
+
+
+<option설명>
+-Image2Composit: outline을 만들때 Outline Image에 색상용 이미지를 더해준다. 
+
+<Outline 추출옵션>
+-One:
+      .오리지널 영상에서 전영역에서 각 파티클의 ROI영역을 구분,
+	  .각 ROI에서 최대 파티클이 Object의  OUTLINE이라 간주함
+
+-All: 
+	  .오리지널 영상에서 전영역에서 각 파티클의 ROI영역을 구분,
+	  .각 ROI의 모든 파티클이 Object의  OUTLINE이라 간주함
+	  .Particle Size뿐만 아니라 좌표도 합성함
+
+-MaxBySeperated
+      .오리지널 영상을 후처리전 ROI영역만큼 잘라낸후
+	  .각 영상에 대해 Particle Report를 생성
+	  .리포트로부터 제일큰 파티클이 Outline임
+	  
+-AllBySeperated
+      .오리지널 영상을 후처리전 ROI영역만큼 잘라낸후
+	  .각 영상에 대해 Particle Report를 생성
+	  .리포트로부터 모든 파티클이의 합이 Outline임
+	  .Particle Size뿐만 아니라 좌표도 합성함
+
+
+<2017.8.14> System Problem
+.증상: 
+	- 4개 Lane모두 정도의 차이는 있으나 Image가 깨짐
+	- 저속에서도 Sync가 맞지않음
+
+.원인: Network Traffic,Algorithm delay
+.비교: MAX에서 Image를 관찰했을때 Image깨짐현상은 없음
+.결론: Algorithm Delay문제일 가능성이 큼
+.조치:
+    - Traffic을 줄이기 위해 1패킷당 Byte수를 8000에서 9000으로 늘림
+	- ROI영역을 1600x200에서 1500x160로 25%줄임
+	- Extra Image Enhancement를 Disable시킴
+	- Extra Image Type을 HSV에서 RGB로 변경
+	- Frame Rate를 100에서 60으로변경
+	- Ethernet Auto Metric을 Uncheck하고, 인터넷을 100, 비젼측 자동메트릭 유지
+	- delay를 줄이기위해 display기능사용을 최소화함(User,Dynamic ROI,Result,화상처리화면에서 Outline만처리)
+.결과:
+    -4개Lane공히 Image깨짐현상은 사라짐
+	-Sync문제는 현격히 완화 되었으나 약간의 Async현상이 보임
+.검토:
+    -초기 위설정을 유지한채 Image깨짐,Asnyc문제는 없었으나 인터넷 연결후 문제가 발생함.
+	(정상인 경우와 비교할때 인터넷 연결외엔 달라진게 없음)
+    -Image깨짐 현상이 사라진 것 으로보아 Traffic문제는 해결되었다고 생각됨
+	-약간의 Async문제는 Algorithm 최적화로 해결가능하다 생각됨.
+
+<root config file example>
+
+[COMMENT]
+SEH SMART VISION ROOT CONFIGURATION FILE
+[CUSTOMER]
+SNP SYSTEM
+[CONFIG FILE PATH]
+C:\Program Files\S&P SYSTEM\SNP SMART VISION\config\test.ssvc
+[LANE]
+1
+[IMAGE PROCESSING]
+2
+[INPORT]
+1
+[OUTPORT]
+2
+[CONTROL PORT]
+3
+[ALARMT]
+False
+[CARRIER]
+2
+[PERIODE]
+100
+[LANE A NUMBER]
+1
+[LANE B NUMBER]
+0
+[STEM REMOVER]
+True
+[SIZE BINDING]
+Maximum
+[COLOR BINDING]
+LastAverage
+[ASPECT BINDING]
+Maximum
+[TX PROTOCOL]
+Standard
+[AUTO START]
+False
+[MIN SIZE]
+5000
+[USER MODE]
+SUPERVISOR
+[DEFAULT CAM]
+cam0
+[OUTLINE METHOD]
+All
+[MIN OUTLINE PARTICLE]
+10
+[PARTICLE REMOVER]
+False
+[PARTICLE FILTER]
+False
+[OUTLINE PARTICLE REMOVER]
+True
+[IMAGE1 ENHANCE]
+True
+[IMAGE2 ENHANCE]
+True
+[XIMAGE ENHANCE]
+True
+[LANE BALANCE COLOR FACTOR]
+1000=> 최종 출력값에 이값을 곱해줌(0이면 무시) 
+
+
+
+
+
+
+*/

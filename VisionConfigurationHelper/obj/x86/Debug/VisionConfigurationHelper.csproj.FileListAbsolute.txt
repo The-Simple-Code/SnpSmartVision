@@ -1,0 +1,4 @@
+D:\C#_PROJECT\SnpSmartVision\VisionConfigurationHelper\bin\x86\Debug\VisionConfigurationHelper.dll
+D:\C#_PROJECT\SnpSmartVision\VisionConfigurationHelper\bin\x86\Debug\VisionConfigurationHelper.pdb
+D:\C#_PROJECT\SnpSmartVision\VisionConfigurationHelper\obj\x86\Debug\VisionConfigurationHelper.dll
+D:\C#_PROJECT\SnpSmartVision\VisionConfigurationHelper\obj\x86\Debug\VisionConfigurationHelper.pdb
